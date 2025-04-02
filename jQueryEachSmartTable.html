@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <html><head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+		<style>
+		    
+		    th, td{
+		        border-bottom: solid 1px black; 
+		        padding: 10px;
+		    }
+		    table{
+		        border-collapse:collapse;
+		        
+		    }
+		</style>
+	</head>
+
+	<body>
+	    <table>
+	        <tbody><tr>
+	            <th style="font-size: 20px; font-style: italic;">Item</th>
+	            <th style="font-size: 20px; font-style: italic;">Cost</th>
+	            <th style="font-size: 20px; font-style: italic;">Purpose</th>
+	        </tr>
+	        <tr>
+	            <td style="background-color: lightblue;">100 Balloons</td>
+	            <td style="background-color: tomato;">10.50</td>
+	            <td style="background-color: lightblue;">Ryan's Birthday Party!</td>
+	        </tr>
+	        <tr>
+	            <td style="background-color: lightblue;">Ice</td>
+	            <td>3.00</td>
+	            <td style="background-color: lightblue;">Lemonade Stand</td>
+	        </tr>
+	        <tr>
+	            <td style="background-color: lightblue;">Stain Remover</td>
+	            <td>5.00</td>
+	            <td style="background-color: lightblue;">Dirty Soccer Uniform</td>
+	        </tr>
+	        <tr>
+	            <td style="background-color: lightblue;">Service Fee</td>
+	            <td style="background-color: tomato;">86.00</td>
+	            <td style="background-color: lightblue;">Flat Tire</td>
+	        </tr>
+	    </tbody>
+    </table>
+    <script>
+        $("th").css({"font-size": "20px", "font-style": "italic"});            
+        $("td:nth-child(odd)").css("background-color", "lightblue");
+
+        $("td:nth-child(2").each(function () {
+            // element represents one td tag each iteration
+            var element = $(this);
+            var cost = parseFloat(element.text());
+
+            if (cost > 10.00) {
+                element.css("background-color", "tomato");
+            }
+        });
+        // function checkCost() {
+        //     for (var i = 1; i <= $("tr").length; i++) {
+        //         var item = $("tr:nth-child(" + i + ") td:nth-child(2)");
+        //         var cost = parseFloat(item.text());
+        //         if (cost > 10) {
+        //             item.css("background-color", "tomato");
+        //         }
+        //     }
+        // }
+        // checkCost();    
+    </script>
+</body>
+</html>

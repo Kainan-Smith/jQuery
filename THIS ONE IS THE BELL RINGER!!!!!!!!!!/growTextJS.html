@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">Yaba Goobie!</p>
+
+    <script>
+        var textSize = 10;
+        var timer = setInterval(growText, 500);
+        
+        var para = document.getElementById("para");
+        function growText() {
+            textSize += 1
+            para.style.fontSize = textSize + "px";
+
+            if (textSize == 20) {
+                clearInterval(timer);
+            }
+        }
+    </script>
+</body>
+</html>
